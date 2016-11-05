@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -10,6 +11,9 @@ module.exports = {
       publicPath: '/',
       filename: 'index.js'
   },
+  devServer: {
+      contentBase: "./src"
+  },
   devtool: 'source-map',
   module: {
     loaders: [
@@ -18,10 +22,16 @@ module.exports = {
         include: path.join(__dirname, 'src'),
         loader: 'babel-loader',
         query: {
-          presets: ["es2015"],
+          presets: ["es2015","react"]
         }
       }
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      inject: 'body',
+    })
+  ],
   debug: true
 };

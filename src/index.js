@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
+
 // import App from './App.js';
 // import './index.css';
 
-class Layout extends Component {
+class Layout extends React.Component {
   render(){
     return(
       <div>
