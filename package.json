@@ -2,6 +2,9 @@
   "name": "hello-world",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --config webpac.dev.config.js"
+  },
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
